@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "firstName": "Afifa ",
+      "lastName": "Oishi",
+      "email": "Oishi",
+      "mobile": "12345",
+      "salary": "200000",
+      "id": 2
+    },
+    {
+      "firstName": "kabir",
+      "lastName": "sing",
+      "email": "sing@gmail.com",
+      "mobile": "01770334455",
+      "salary": "55,000",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
