@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "firstName": "Afifa ",
       "lastName": "Oishi",
       "email": "Oishi",
@@ -20,15 +15,33 @@
       "mobile": "01770334455",
       "salary": "55,000",
       "id": 3
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 4,
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@gmail.com",
+      "mobile": "01770884130",
+      "salary": "30000"
+    },
+    {
+      "id": 5,
+      "firstName": "Afifa ",
+      "lastName": "Oishi",
+      "email": "Oishi@gmail.com",
+      "mobile": "01778892334",
+      "salary": "55000"
+    },
+    {
+      "id": 6,
+      "firstName": "Afifa ",
+      "lastName": "Oishi",
+      "email": "afifa@gmail.com",
+      "mobile": "12345678",
+      "salary": "5600"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

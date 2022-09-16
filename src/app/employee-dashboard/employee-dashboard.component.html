@@ -21,17 +21,26 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Sashi</td>
-            <td>Yadav</td>
-            <td>yshashi30@gmail.com</td>
-            <td>01830130876</td>
-            <td>$ 50,000</td>
+        <tr *ngFor="let row of employeeData" >
+            <!-- <td>1</td>
+            <td>firstName</td>
+            <td>lastName</td>
+            <td>email</td>
+            <td>mobile</td>
+            <td>salary</td>
+            <td> -->
+            <td>{{row.id}}</td>
+            <td>{{row.firstName}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.mobile}}</td>
+            <td>{{row.salary}}</td>
+            
             <td>
-                <button class="btn btn-info">Edit</button>
-                <button class="btn btn-danger mx-3">Delete</button>
+              <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
             </td>
+                
         </tr>
     </tbody>
 </table>
@@ -75,8 +84,9 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button"  id="cancle" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>
