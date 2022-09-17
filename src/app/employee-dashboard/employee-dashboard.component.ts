@@ -14,6 +14,8 @@ export class EmployeeDashboardComponent implements OnInit {
   formValue !: FormGroup;
   employeeModelObj : EmployeeModel = new EmployeeModel();
   employeeData !: any;
+  showAdd !: boolean;
+  showUpdate !: boolean;
   //api: any;
   constructor(private formbuilder: FormBuilder, private api : ApiService){ }
 
@@ -28,6 +30,12 @@ export class EmployeeDashboardComponent implements OnInit {
   })
   this.getAllEmployee();
   }
+  clickAddEmployee(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
+  } 
+
   postEmployeeDetails(){
     this.employeeModelObj.firstName = this.formValue.value.firstName;
     this.employeeModelObj.lastName = this.formValue.value.lastName;
@@ -63,6 +71,8 @@ export class EmployeeDashboardComponent implements OnInit {
       }
 
       onEdit(row : any){
+        this.showAdd = false;
+        this.showUpdate = true;
         this.employeeModelObj.id = row.id;
         this.formValue.controls['firstName'].setValue(row.firstName);
         this.formValue.controls['lastName'].setValue(row.lastName);
@@ -78,8 +88,8 @@ export class EmployeeDashboardComponent implements OnInit {
         this.employeeModelObj.mobile = this.formValue.value.mobile;
         this.employeeModelObj.salary = this.formValue.value.salary;
 
-        this.api.updateEmployee(this.employeeModelObj , this.employeeModelObj.id).subscribe(res=>{
-          alert("Update Successfully");
+        this.api.updateEmployee(this.employeeModelObj.id, this.employeeModelObj).subscribe(res=>{
+          alert("Updated Successfully");
           
           let ref = document.getElementById('cancle')
           ref?.click();

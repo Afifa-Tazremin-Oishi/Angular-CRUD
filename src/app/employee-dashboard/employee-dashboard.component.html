@@ -2,7 +2,7 @@
     <div class="container">
         <h1 style="color:aliceblue ;">Angular CRUD</h1>
         <div class="">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success">Add Employee
+            <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success">Add Employee
             </button>
         </div>
     </div>
@@ -85,8 +85,8 @@
         </div>
         <div class="modal-footer">
           <button type="button"  id="cancle" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
-          <button type="button" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+          <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>

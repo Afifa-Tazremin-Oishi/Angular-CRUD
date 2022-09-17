@@ -1,12 +1,12 @@
 {
   "posts": [
     {
-      "firstName": "Afifa ",
+      "id": 2,
+      "firstName": "Afifaaaaa",
       "lastName": "Oishi",
       "email": "Oishi",
       "mobile": "12345",
-      "salary": "200000",
-      "id": 2
+      "salary": "200000"
     },
     {
       "firstName": "kabir",
@@ -39,6 +39,14 @@
       "email": "afifa@gmail.com",
       "mobile": "12345678",
       "salary": "5600"
+    },
+    {
+      "id": 7,
+      "firstName": "Emrul",
+      "lastName": "Emon",
+      "email": "emon@gmail.com",
+      "mobile": "0177876543",
+      "salary": "600000"
     }
   ],
   "comments": [],
