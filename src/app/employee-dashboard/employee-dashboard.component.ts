@@ -3,6 +3,7 @@ import { ApiService } from './../shared/api.service';
 import { assertPlatform, Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import { EmployeeModel } from './models/employee-dashboard.model'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -66,7 +67,22 @@ export class EmployeeDashboardComponent implements OnInit {
       deleteEmployee(row : any){
         this.api.deleteEmployee(row.id).subscribe(res=>{
           alert("Employee Deleted");
-          this.getAllEmployee();
+        //   const Swal = require('sweetalert2')
+        //   Swal.fire({
+        //     title: 'Do you want to save the changes?',
+        //     showDenyButton: true,
+        //     showCancelButton: true,
+        //     confirmButtonText: 'Save',
+        //     denyButtonText: `Don't save`,
+        //   }).then((res) => {
+        //     /* Read more about isConfirmed, isDenied below */
+        //     if (res.isConfirmed) {
+        //       Swal.fire('Saved!', '', 'success')
+        //     } else if (res.isDenied) {
+        //       Swal.fire('Changes are not saved', '', 'info')
+        //     }
+        //   })
+         this.getAllEmployee();
         })
       }
 

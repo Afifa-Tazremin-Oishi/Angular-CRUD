@@ -4,6 +4,7 @@
         <div class="">
             <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success">Add Employee
             </button>
+            <button routerLink="/login" class="btn btn-danger mx-2">Log Out</button>
         </div>
     </div>
 </nav>
@@ -37,8 +38,8 @@
             <td>{{row.salary}}</td>
             
             <td>
-              <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
-                <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
+              <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info btn-sm">Edit</button>
+                <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3 btn-sm">Delete</button>
             </td>
                 
         </tr>
@@ -62,31 +63,36 @@
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">First Name</label>
                   <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <span class="text-danger" *ngIf="formValue.controls['firstName'].dirty && formValue.hasError('required', 'firstName')">*First Name is required</span>
                   
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Last Name</label>
                   <input type="text" formControlName="lastName" class="form-control" id="exampleInputPassword1">
+                  <span class="text-danger" *ngIf="formValue.controls['lastName'].dirty && formValue.hasError('required', 'lastName')">*Last Name is required</span>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Email Address</label>
                   <input type="email" formControlName="email" class="form-control" id="exampleInputPassword1">
+                  <span class="text-danger" *ngIf="formValue.controls['email'].dirty && formValue.hasError('required', 'email')">*Email is required</span>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Mobile No.</label>
                   <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1">
+                  <span class="text-danger" *ngIf="formValue.controls['mobile'].dirty && formValue.hasError('required', 'mobile')">*Mobile Number is required</span>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Salary</label>
                   <input type="text" formControlName="salary" class="form-control" id="exampleInputPassword1">
+                  <span class="text-danger" *ngIf="formValue.controls['salary'].dirty && formValue.hasError('required', 'salary')">*Salary is required</span>
                 </div>
                 
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button"  id="cancle" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
-          <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+          <button type="button"  id="cancle" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary btn-sm">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary btn-sm">Update</button>
         </div>
       </div>
     </div>

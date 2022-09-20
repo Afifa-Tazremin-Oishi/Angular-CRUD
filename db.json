@@ -1,25 +1,9 @@
 {
   "posts": [
     {
-      "id": 2,
-      "firstName": "Afifaaaaa",
-      "lastName": "Oishi",
-      "email": "Oishi",
-      "mobile": "12345",
-      "salary": "200000"
-    },
-    {
-      "firstName": "kabir",
-      "lastName": "sing",
-      "email": "sing@gmail.com",
-      "mobile": "01770334455",
-      "salary": "55,000",
-      "id": 3
-    },
-    {
       "id": 4,
-      "firstName": "test",
-      "lastName": "test",
+      "firstName": "Zaber",
+      "lastName": "Khan",
       "email": "test@gmail.com",
       "mobile": "01770884130",
       "salary": "30000"
@@ -34,22 +18,71 @@
     },
     {
       "id": 6,
-      "firstName": "Afifa ",
-      "lastName": "Oishi",
-      "email": "afifa@gmail.com",
-      "mobile": "12345678",
-      "salary": "5600"
-    },
-    {
-      "id": 7,
-      "firstName": "Emrul",
-      "lastName": "Emon",
-      "email": "emon@gmail.com",
-      "mobile": "0177876543",
-      "salary": "600000"
+      "firstName": "kabir",
+      "lastName": "sing",
+      "email": "kabir@gmail.com",
+      "mobile": "01987652341",
+      "salary": "70000"
     }
   ],
-  "comments": [],
+  "signupUsers": [
+    {
+      "fullname": "Arijit Sing",
+      "email": "arijit@gmail.com",
+      "password": "0923#arijit",
+      "mobile": 1880234567,
+      "id": 1
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 3
+    },
+    {
+      "fullname": "",
+      "email": "arijit@gmail.com",
+      "password": "",
+      "mobile": 123456,
+      "id": 4
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 5
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 6
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 7
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "id": 8
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
