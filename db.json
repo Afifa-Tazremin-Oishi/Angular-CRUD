@@ -1,28 +1,44 @@
 {
   "posts": [
     {
-      "id": 4,
-      "firstName": "Zaber",
-      "lastName": "Khan",
-      "email": "test@gmail.com",
-      "mobile": "01770884130",
-      "salary": "30000"
-    },
-    {
-      "id": 5,
+      "id": 1,
       "firstName": "Afifa ",
       "lastName": "Oishi",
-      "email": "Oishi@gmail.com",
-      "mobile": "01778892334",
-      "salary": "55000"
+      "email": "oishi@gmail.com",
+      "mobile": "0178934567",
+      "salary": "50000"
+    },
+    {
+      "id": 2,
+      "firstName": "Nayem",
+      "lastName": "Hasan",
+      "email": "nayem@gamil.com",
+      "mobile": "01833456701",
+      "salary": "70500"
+    },
+    {
+      "id": 4,
+      "firstName": "Emrul",
+      "lastName": "Hasan",
+      "email": "emrul@gmail.com",
+      "mobile": "01770334567",
+      "salary": "90000"
     },
     {
       "id": 6,
       "firstName": "kabir",
       "lastName": "sing",
-      "email": "kabir@gmail.com",
-      "mobile": "01987652341",
-      "salary": "70000"
+      "email": "sing@gmail.com",
+      "mobile": "0198543021",
+      "salary": "100000"
+    },
+    {
+      "id": 7,
+      "firstName": "Afifa ",
+      "lastName": "Oishi",
+      "email": "Oishi",
+      "mobile": "0178998765",
+      "salary": "56780"
     }
   ],
   "signupUsers": [

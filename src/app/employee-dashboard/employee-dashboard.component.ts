@@ -65,26 +65,33 @@ export class EmployeeDashboardComponent implements OnInit {
       }
 
       deleteEmployee(row : any){
-        this.api.deleteEmployee(row.id).subscribe(res=>{
-          alert("Employee Deleted");
-        //   const Swal = require('sweetalert2')
-        //   Swal.fire({
-        //     title: 'Do you want to save the changes?',
-        //     showDenyButton: true,
-        //     showCancelButton: true,
-        //     confirmButtonText: 'Save',
-        //     denyButtonText: `Don't save`,
-        //   }).then((res) => {
-        //     /* Read more about isConfirmed, isDenied below */
-        //     if (res.isConfirmed) {
-        //       Swal.fire('Saved!', '', 'success')
-        //     } else if (res.isDenied) {
-        //       Swal.fire('Changes are not saved', '', 'info')
-        //     }
-        //   })
-         this.getAllEmployee();
+
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.api.deleteEmployee(row.id).subscribe(res=>{
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            })
+            
+          }
+          this.getAllEmployee();
         })
       }
+        
+         //this.getAllEmployee();
+        // })
+     
 
       onEdit(row : any){
         this.showAdd = false;
