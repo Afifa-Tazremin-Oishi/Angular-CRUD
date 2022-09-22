@@ -1,7 +1,7 @@
 import { ApiService } from './../shared/api.service';
 //import { EmployeeModel } from './employee-dashboard.model';
 import { assertPlatform, Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup} from '@angular/forms';
+import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import { EmployeeModel } from './models/employee-dashboard.model'
 import Swal from 'sweetalert2';
 
@@ -17,16 +17,18 @@ export class EmployeeDashboardComponent implements OnInit {
   employeeData !: any;
   showAdd !: boolean;
   showUpdate !: boolean;
+  searchFlight: any;
+  p: number = 1;
   //api: any;
   constructor(private formbuilder: FormBuilder, private api : ApiService){ }
 
   ngOnInit(): void {
      this.formValue = this.formbuilder.group({
-     firstName : [''],
-     lastName: [''],
-     email: [''],
-     mobile: [''],
-     salary: [''],
+     firstName : ['',Validators.required],
+     lastName: ['', Validators.required],
+     email: ['', Validators.required],
+     mobile: ['', Validators.required],
+     salary: ['', Validators.required],
   
   })
   this.getAllEmployee();
@@ -119,6 +121,18 @@ export class EmployeeDashboardComponent implements OnInit {
           this.formValue.reset();
           this.getAllEmployee();
         })
+      }
+
+      //---------pagination----------
+      keyPressAlphanumeric(event: any) {
+        var inp = String.fromCharCode(event.keyCode);
+    
+        if (/[a-zA-Z0-9]/.test(inp)) {
+          return true;
+        } else {
+          event.preventDefault();
+          return false;
+        }
       }
 
 

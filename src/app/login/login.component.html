@@ -10,7 +10,7 @@
                     <form [formGroup]="loginForm" class="form" (ngSubmit)="login()">
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input formControlName="email" type="email" placeholder="example@email.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                           <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">*Email ID is required</span>
                         </div>

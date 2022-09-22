@@ -14,8 +14,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.FormBuilder.group({
-      email: ['', Validators.required ],
-      password: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.compose([
+        Validators.maxLength(25),
+        Validators.minLength(5),
+        Validators.required
+      ])],
     })
   }
   login(){

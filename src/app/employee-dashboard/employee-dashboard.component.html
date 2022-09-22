@@ -2,13 +2,29 @@
     <div class="container">
         <h1 style="color:aliceblue ;">Angular CRUD</h1>
         <div class="">
-            <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success">Add Employee
-            </button>
+            
             <button routerLink="/login" class="btn btn-danger mx-2">Log Out</button>
         </div>
     </div>
 </nav>
+<div style="margin-top: 2rem;"></div>
 <div class="container">
+  <div class="row">
+    <div class="col">
+      <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success">Add Employee
+      </button>
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <div class="form-group">
+        <label>Search</label>
+        <div class="searching-flight">
+          <input type="text" class="form-control" name="search"  [(ngModel)]="searchFlight" (keypress)="keyPressAlphanumeric($event)" placeholder="search" maxlength="10"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table class="table mt-3">
     <thead>
         <tr>
@@ -22,7 +38,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of employeeData" >
+        <tr *ngFor="let row of employeeData | filter:searchFlight | paginate: { itemsPerPage: 10, currentPage: p }" class="ag-row" >
             <!-- <td>1</td>
             <td>firstName</td>
             <td>lastName</td>
@@ -45,7 +61,7 @@
         </tr>
     </tbody>
 </table>
-
+<pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
 </div>
 
 
@@ -73,7 +89,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Email Address</label>
-                  <input type="email" formControlName="email" class="form-control" id="exampleInputPassword1">
+                  <input type="email" formControlName="email" placeholder="example@email.com" class="form-control" id="exampleInputPassword1">
                   <span class="text-danger" *ngIf="formValue.controls['email'].dirty && formValue.hasError('required', 'email')">*Email is required</span>
                 </div>
                 <div class="mb-3">
